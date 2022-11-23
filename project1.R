@@ -15,11 +15,13 @@ hist(df$Global_active_power,
       xlab = "Global Active Power (kilowatts)")
 dev.off()
 
+#Plot 2
 png("plot2.png", width=480, height=480)
 plot(strptime(df$Datetime, "%d/%m/%Y %H:%M:%S"),df$Global_active_power,
      type= "l", ylab= "Global Active Power (kilowatts)", xlab= "")
 dev.off()
 
+#Plot 3
 png("plot3.png", width=480, height=480)
 plot(strptime(df$Datetime, "%d/%m/%Y %H:%M:%S"), df$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
 lines(strptime(df$Datetime, "%d/%m/%Y %H:%M:%S"), df$Sub_metering_2, type = "l", col="red")
@@ -27,6 +29,7 @@ lines(strptime(df$Datetime, "%d/%m/%Y %H:%M:%S"), df$Sub_metering_3, type = "l",
 legend("topright",lty=1, col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()
 
+#Plot 4
 png("plot4.png", width=480, height=480)
 par(mfcol = c(2,2))
 plot(strptime(df$Datetime, "%d/%m/%Y %H:%M:%S"), df$Global_active_power, type="l", xlab="",ylab="Global Active Power(Kilowatts)" )
